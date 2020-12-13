@@ -4,6 +4,12 @@ from selenium import webdriver
 link = "http://selenium1py.pythonanywhere.com/"
 
 
+"""Для фикстур можно задавать область покрытия фикстур. Допустимые значения: “function”, “class”, “module”, 
+“session”. 
+Соответственно, фикстура будет вызываться один раз для тестового метода, один раз для класса, один раз для 
+модуля или один раз для всех тестов, запущенных в данной сессии. """
+
+
 @pytest.fixture(scope="class")
 def browser():
     print("\nstart browser for test..")

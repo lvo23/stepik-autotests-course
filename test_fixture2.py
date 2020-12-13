@@ -4,6 +4,7 @@ from selenium import webdriver
 link = "http://selenium1py.pythonanywhere.com/"
 
 
+# фикстура, создает объект WebDriver - при её использовании брауезер будет запускаться для каждого теста
 @pytest.fixture
 def browser():
     print("\nstart browser for test..")
@@ -12,7 +13,7 @@ def browser():
 
 
 class TestMainPage1:
-    # вызываем фикстуру в тесте, передав ее как параметр
+    # вызываем фикстуру в тесте, передав ее как параметр - browser после self
     def test_guest_should_see_login_link(self, browser):
         browser.get(link)
         browser.find_element_by_css_selector("#login_link")
